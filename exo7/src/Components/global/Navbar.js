@@ -18,6 +18,9 @@ const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link" to="FilterableProductTablePage">FilterableProductTablePage</Link>
 						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="CartPage">CartPage</Link>
+						</li>
 					</ul>
 					<Form />
 				</div>

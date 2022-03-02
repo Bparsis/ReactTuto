@@ -1,7 +1,7 @@
 import ProductRow from "./ProductRow";
 import {products} from "./Data";
 
-const ProductTable = ({inputValue, checkboxValue, categoryCheckValue}) => {
+const ProductTable = ({inputValue, checkboxValue, categoryCheckValue, cart, setCart}) => {
 	
 	let newproducts = products.filter(product => product.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
 	
@@ -20,7 +20,7 @@ const ProductTable = ({inputValue, checkboxValue, categoryCheckValue}) => {
 	return (
 		<div className="flex">
 			{newproducts.map((product, i)=>{			
-				return <ProductRow key={i} product={product} />
+				return <ProductRow key={i} product={product} cart={cart} setCart={setCart}/>
 			})}
 		</div>
 	);

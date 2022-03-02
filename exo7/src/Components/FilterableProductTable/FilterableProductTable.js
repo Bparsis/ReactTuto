@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 import ShearchBar from "./ShearchBar";
 import ProductTable from "./ProductTable";
 
-const FilterableProductTable = () => {
+const FilterableProductTable = ({cart, setCart}) => {
 	
 	const [inputValue, setInputValue] = useState("");
 	const [checkboxValue, setCheckboxValue] = useState(false);
@@ -16,7 +16,7 @@ const FilterableProductTable = () => {
 	return (
 		<>
 			<ShearchBar setInputValue={setInputValue} setCheckboxValue={setCheckboxValue} setCategoryCheckValue={setCategoryCheckValue} categoryCheckValue={categoryCheckValue} />
-			<ProductTable inputValue={inputValue} checkboxValue={checkboxValue} categoryCheckValue={categoryCheckValue} />
+			<ProductTable inputValue={inputValue} checkboxValue={checkboxValue} categoryCheckValue={categoryCheckValue} cart={cart} setCart={setCart}/>
 		</>
 	);
 }
