@@ -19,8 +19,16 @@ const Router = () => {
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
-						<Route path="FilterableProductTablePage" element={<FilterableProductTablePage cart={cart} setCart={setCart} />} />
-						<Route path="CartPage" element={<CartPage cart={cart} setCart={setCart} />} />
+						<Route path="FilterableProductTablePage" element={(
+							<CartContext.Provider value={{cart, setCart}} >
+								<FilterableProductTablePage />
+							</CartContext.Provider>
+						)} />
+						<Route path="CartPage" element={(
+							<CartContext.Provider value={{cart, setCart}} >
+								<CartPage />
+							</CartContext.Provider>
+						)} />
 					<Route path="*" element={<Not />} />
 				</Route>
 			</Routes>
@@ -28,4 +36,4 @@ const Router = () => {
 	);
 }
 
-export default Router;
+export {CartContext, Router};

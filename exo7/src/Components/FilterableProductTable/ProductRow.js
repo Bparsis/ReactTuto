@@ -1,7 +1,13 @@
+import {useContext} from "react";
+
 import ProductCategoryRow from "./ProductCategoryRow";
 
-const ProductRow = ({product, cart, setCart}) => {
+import {CartContext} from "./../Router";
 
+const ProductRow = ({product}) => {
+	
+	const {cart, setCart} = useContext(CartContext);
+	
 	const handleAdd = () => {
 		let newCart = [...cart];
 		newCart.push(product);

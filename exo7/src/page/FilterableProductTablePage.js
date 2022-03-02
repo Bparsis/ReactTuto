@@ -1,9 +1,9 @@
 import FilterableProductTable from "./../Components/FilterableProductTable/FilterableProductTable";
 
-const FilterableProductTablePage = ({cart, setCart}) => {
+const FilterableProductTablePage = () => {
   return (
     <>
-      <FilterableProductTable cart={cart} setCart={setCart} />
+      <FilterableProductTable />
     </>
   )
 };

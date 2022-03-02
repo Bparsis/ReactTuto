@@ -1,9 +1,13 @@
+// import {useContext} from "react";
+
 import Cart from "./../Components/Cart/Cart";
 
-const CartPage = ({cart, setCart}) => {
+// const CartContext = useContext;
+
+const CartPage = () => {
   return (
     <>
-      <Cart cart={cart} setCart={setCart} />
+      <Cart />
     </>
   )
 };
