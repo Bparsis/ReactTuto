@@ -17,10 +17,8 @@ var Product = [
 var products = [];
 
 Product.map((product) => {
-	product.category = categorys
-		.filter(category => category.id == product.category)
-		.pop();
+	product.category = categorys.find(category => category.id == product.category)
 	products.push(product);
 });
 
-export {products} 
+export {products, categorys} 

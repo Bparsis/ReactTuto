@@ -1,5 +1,5 @@
 import ProductRow from "./ProductRow";
-import {products} from "./Data";
+import {products} from "./../global/Data";
 
 const ProductTable = ({inputValue, checkboxValue, categoryCheckValue}) => {
 	

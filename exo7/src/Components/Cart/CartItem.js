@@ -10,8 +10,11 @@ const CartItem = ({cartItem, setCart, cart}) => {
 		setCart(newCart);
 	}
 
+	let divStyle = "container p-1 my-4 text-center rounded-pill text-white border border-5";
+	divStyle += cartItem.stock <= 0 ? " border-danger bg-warning" : " border-primary bg-info";
+
 	return (
-		<div className="container p-1 my-4 bg-info text-white text-center rounded-pill" style={{width: 400}}>	
+		<div className={divStyle} style={{width: 400}}>	
 			<h5>{cartItem.category.name}</h5>
 			<h4>{cartItem.name}</h4>
 			<p>price {cartItem.price}, stock {cartItem.stock}</p>

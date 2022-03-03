@@ -21,6 +21,9 @@ const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link" to="CartPage">CartPage</Link>
 						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="AddProductFormPage">AddProductFormPage</Link>
+						</li>
 					</ul>
 					<Form />
 				</div>
