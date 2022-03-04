@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import {useContext} from "react";
+
 import Form from "./Form";
 
-const Navbar = () => {
+import {AppContext} from "./../../App";
 
+const Navbar = () => {
+	
+	const {user, logged} = useContext(AppContext)
+	
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-info">
 			<div className="container-fluid">
@@ -24,7 +30,17 @@ const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link" to="AddProductFormPage">AddProductFormPage</Link>
 						</li>
+						{ logged ?
+							<li className="nav-item">
+								<Link className="nav-link" to="LogoutPage">LogoutPage</Link>
+							</li>
+						:
+							<li className="nav-item">
+								<Link className="nav-link" to="LoginPage">LoginPage</Link>
+							</li>
+						}
 					</ul>
+					<h1 className="text-light mx-5">{logged ? user.name : "Deconecté" }</h1>
 					<Form />
 				</div>
 			</div>

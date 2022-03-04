@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 import ProductCategoryRow from "./ProductCategoryRow";
 
-import {CartContext} from "./../Router";
+import {AppContext} from "./../../App";
 
 const ProductRow = ({product}) => {
 	
 	const navigate = useNavigate();
-	const {cart, setCart} = useContext(CartContext);
+	const {cart, setCart} = useContext(AppContext);
 	
 	const handleAdd = () => {
 		let newCart = [...cart];

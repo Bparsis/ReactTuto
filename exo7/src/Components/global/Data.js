@@ -1,4 +1,4 @@
-var categorys = [
+var categorysInit = [
 	{name: "Fruits", id: 1},
 	{name: "Vegetable", id: 2},
 ]
@@ -14,11 +14,11 @@ var Product = [
 	{name: "Pear", price: 8, category: 1, stock: 64, id: 8},
 ]
 
-var products = [];
+var productsInit = [];
 
 Product.map((product) => {
-	product.category = categorys.find(category => category.id == product.category)
-	products.push(product);
+	product.category = categorysInit.find(category => category.id == product.category)
+	productsInit.push(product);
 });
 
-export {products, categorys} 
+export {productsInit, categorysInit} 

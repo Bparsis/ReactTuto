@@ -1,10 +1,10 @@
 import {useContext} from "react";
-import {CartContext} from "./../Router";
+import {AppContext} from "./../../App";
 
 import CartItem from "./CartItem";
 
 const Cart = () => {
-	const {cart, setCart} = useContext(CartContext);
+	const {cart, setCart} = useContext(AppContext);
 
 	return (
 		<div className="flex">

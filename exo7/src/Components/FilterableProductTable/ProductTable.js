@@ -1,7 +1,12 @@
+import {useContext} from "react";
+
+import {AppContext} from "./../../App";
+
 import ProductRow from "./ProductRow";
-import {products} from "./../global/Data";
 
 const ProductTable = ({inputValue, checkboxValue, categoryCheckValue}) => {
+	
+	const {products} = useContext(AppContext);
 	
 	let newproducts = products.filter(product => product.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
 	
