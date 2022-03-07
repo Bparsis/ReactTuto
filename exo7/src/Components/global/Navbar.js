@@ -27,9 +27,11 @@ const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link" to="CartPage">CartPage</Link>
 						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="AddProductFormPage">AddProductFormPage</Link>
-						</li>
+						{user?.role == 'admin' &&
+							<li className="nav-item">
+								<Link className="nav-link" to="AddProductFormPage">AddProductFormPage</Link>
+							</li>
+						}
 						{ logged ?
 							<li className="nav-item">
 								<Link className="nav-link" to="LogoutPage">LogoutPage</Link>
