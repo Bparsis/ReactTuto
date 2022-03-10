@@ -7,6 +7,7 @@ import Exo3 from "./../page/Exo3";
 import Exo4 from "./../page/Exo4";
 import Exo5 from "./../page/Exo5";
 import Exo6 from "./../page/Exo6";
+import Exo8 from "./../page/Exo8";
 
 import LogOut from "./exo5/LogOut";
 import Login from "./exo5/Login";
@@ -16,11 +17,6 @@ const Router = () => {
 const [logged, setLogged] = useState(false);
 const [user, setUser] = useState();
 
-	useEffect(() => {
-		console.log(logged)
-	}, [logged]);
-	
-
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -28,6 +24,7 @@ const [user, setUser] = useState();
 					<Route index element={<Home />} />
 					<Route path="Exo3" element={<Exo3 />} />
 					<Route path="Exo6" element={<Exo6 />} />
+					<Route path="Exo8" element={<Exo8 />} />
 					<Route path="Wild/" element={<Layout />} >
 						<Route path=":Exo4" element={<Exo4 />} />
 					</Route>

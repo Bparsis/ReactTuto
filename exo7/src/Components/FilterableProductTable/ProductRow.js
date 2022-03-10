@@ -33,7 +33,9 @@ const ProductRow = ({product}) => {
 	return (
 		<div className={divStyle} style={{width: 400}}>	
 			<ProductCategoryRow category={product.category}/>
+			
 			{ user?.role =='admin' ? <h4 onClick={edit} >{product.name}</h4> : <h4>{product.name}</h4> }
+			
 			<p>price {product.price}, stock {product.stock}</p>
 			<div className="btn-group rounded">
 				{product.stock > 0 && <button className="btn btn-primary" onClick={handleAdd}>ajouter au panier</button>}
@@ -44,4 +46,4 @@ const ProductRow = ({product}) => {
 }
 
 export default ProductRow;
-			/*<h4 { user?.role == 'admin' && onClick={edit} } >{product.name}</h4>*/
+			// <h4 { user?.role == 'admin' && onClick={edit} } >{product.name}</h4>

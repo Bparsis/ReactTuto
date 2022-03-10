@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import {useContext} from "react";
+
+import {AppContext} from "./../../App";
+
 import Form from "./Form";
 
 const Navbar = () => {
+
+	const {user, logged} = useContext(AppContext)
 
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-info">
@@ -16,27 +22,19 @@ const Navbar = () => {
 							<Link className="nav-link" to="/">Home</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="Exo3">Exo3</Link>
+							<Link className="nav-link" to="/FilterableProductPage">FPP</Link>
 						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="Exo4">Exo4</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="protected">protected</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="Exo6">Exo6</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="Exo8">Exo8</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="Login">Login</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="LogOut">LogOut</Link>
-						</li>
+						{ logged ?
+							<li className="nav-item">
+								<Link className="nav-link" to="LogoutPage">LogoutPage</Link>
+							</li>
+						:
+							<li className="nav-item">
+								<Link className="nav-link" to="LoginPage">LoginPage</Link>
+							</li>
+						}
 					</ul>
+					<h1 className="text-light mx-5">{logged ? user.name : "Deconecté" }</h1>
 					<Form />
 				</div>
 			</div>
