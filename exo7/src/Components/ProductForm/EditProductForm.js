@@ -49,6 +49,7 @@ const EditProductForm = ({id}) => {
 		    }
 	    })
 		setProducts(NewProducts);
+		
 	    navigate("/FilterableProductTablePage");
     }
     
